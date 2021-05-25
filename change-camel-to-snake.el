@@ -1,8 +1,4 @@
 
-
-(setq expected "path-unprocessed-ad-conversion-event")
-(setq input "pathUnprocessedAdConversionEvent")
-
                                         ; need to replace capital with -lower for the string
                                         ; operate on each char and add to a building list
 
@@ -41,3 +37,12 @@
   "Change the input camel case to snake case"
   (apply #'string (camel-to-snake-helper (string-to-list camel) 
                                          (list))))
+
+(defun camel-to-snake-copy (camel)
+  "Add camel to snake to my kill ring"
+  (kill-new (camel-to-snake camel))
+  )
+
+;(setq expected "path-unprocessed-ad-conversion-event")
+(setq input "pathUnprocessedAdConversionEvent")
+(camel-to-snake-copy input); path-unprocessed-ad-conversion-event
